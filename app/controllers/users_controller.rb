@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   
   skip_before_action :authorised, only: [:new, :create]
-  before_action :find_user, only: [:edit, :update, :show]
+  before_action :find_user, only: [:edit, :update, :show, :destroy]
 
   def new
     @user = User.new
@@ -27,6 +27,11 @@ class UsersController < ApplicationController
   def update
     @user.update(user_params)
     redirect_to '/posts'
+  end
+
+  def destroy
+    @user.destroy
+    redirect_to root_path
   end
 
   private
