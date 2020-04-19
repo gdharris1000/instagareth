@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-    before_action :find_post, only: [:edit, :update]
+    before_action :find_post, only: [:edit, :update, :destroy]
 
     def index
         @posts = Post.all
@@ -28,6 +28,11 @@ class PostsController < ApplicationController
     def update
         @post.update(post_params.merge(user_id: current_user.id))
         redirect_to @post
+    end
+
+    def destroy
+        @post.destroy
+        redirect_to posts_path
     end
 
     private
