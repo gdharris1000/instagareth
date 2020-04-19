@@ -1,0 +1,16 @@
+<%@posts.each do |post|%>
+  <img src="<%=(url_for(post.image))%>">
+  <p><%=post.caption%></p> 
+  
+  <%@comments.each do |comment|%>
+    <%if comment.post_id == post.id%>
+     <p> <%=comment.comment_text%></p>
+    <%end%>
+  <%end%>
+  <%=form_for @comment, :url => new_comment_path(@comment) do |f|%>
+    <%=f.text_field :comment_text%>
+    <%= f.hidden_field :user_id, :value => current_user.id%>
+    <%= f.hidden_field :post_id, :value => post.id%>
+    <%=f.submit%>
+  <%end%>
+<%end%>
