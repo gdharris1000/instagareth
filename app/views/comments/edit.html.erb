@@ -1,0 +1,5 @@
+    <%=form_for @comment do |f|%>
+      <%= f.text_field :comment_text%>
+      <%= f.submit "Update comment"%>
+    <%end%>
+    <%= link_to "Delete comment", comment_path(@comment), method: :delete, data: { confirm: "Are you sure?" } %>
