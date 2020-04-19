@@ -1,2 +1,3 @@
 <img src="<%=(url_for(@post.image))%>">
 <p><%=@post.caption%></p>
+<%=link_to "Edit", edit_post_path(@post.id) %>

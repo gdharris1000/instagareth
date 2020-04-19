@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  root 'sessions#welcome'
   get 'comments/index'
   resources :users
   resources :posts
