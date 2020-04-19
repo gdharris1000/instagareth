@@ -10,6 +10,13 @@
   </head>
 
   <body>
+    <% if logged_in? %>
+      <div>
+        <%=link_to "New post", new_post_path %>
+        <%=link_to "View posts", posts_path %>
+        <%=link_to "Update profile", edit_user_path(current_user.id) %>
+      </div>
+    <%end%>
     <%= yield %>
   </body>
 </html>

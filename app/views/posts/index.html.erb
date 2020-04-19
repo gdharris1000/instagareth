@@ -6,8 +6,10 @@
     <%if comment.post_id == post.id%>
      <p> 
       <%=comment.comment_text%>
+      <br>
       by 
-      <%=User.find(comment.user_id).name%> at
+      <%=User.find(comment.user_id).name%> 
+      at
       <%=comment.created_at%>
      </p>
     <%end%>

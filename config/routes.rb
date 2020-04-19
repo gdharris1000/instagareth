@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   get 'comments/index'
-  resources :users, only: [:new, :create]
+  resources :users
   resources :posts
   resources :comments
   
