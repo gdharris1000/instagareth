@@ -13,7 +13,8 @@
     <% if logged_in? %>
       <div>
         <%=link_to "New post", new_post_path %>
-        <%=link_to "View posts", posts_path %>
+        <%=link_to "View all posts", posts_path %>
+        <%=link_to "View my posts", user_path(current_user.id)%>
         <%=link_to "Update profile", edit_user_path(current_user.id) %>
         <%=link_to "Logout", '/logout'%>
       </div>

@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   
   skip_before_action :authorised, only: [:new, :create]
-  before_action :find_user, only: [:edit, :update]
+  before_action :find_user, only: [:edit, :update, :show]
 
   def new
     @user = User.new
@@ -14,6 +14,11 @@ class UsersController < ApplicationController
 
     redirect_to '/welcome'
 
+  end
+  
+  def show
+    @posts = Post.where(:user_id => @user.id)
+    @comments = Comment.all
   end
 
   def edit

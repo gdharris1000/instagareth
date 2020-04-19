@@ -1,0 +1,16 @@
+ <%@posts.each do |post|%>
+    <img src="<%=(url_for(post.image))%>">
+    <p><%=link_to "Edit post", edit_post_path(post.id)%></p>
+    <%@comments.each do |comment|%>
+    <%if comment.post_id == post.id%>
+     <p> 
+      <%=comment.comment_text%>
+      <br>
+      by 
+      <%=User.find(comment.user_id).name%> 
+      at
+      <%=comment.created_at%>
+     </p>
+    <%end%>
+  <%end%>
+ <%end%>
