@@ -2,8 +2,8 @@
 
 one:
   caption: MyString
-  user: 
+  user_id: 
 
 two:
   caption: MyString
-  user: 
+  user_id: 

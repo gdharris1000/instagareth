@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Instagareth</title>
+    <title>InstaGareth</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,13 +11,35 @@
 
   <body>
     <% if logged_in? %>
-      <div>
-        <%=link_to "New post", new_post_path %>
-        <%=link_to "View all posts", posts_path %>
-        <%=link_to "View my posts", user_path(current_user.id)%>
-        <%=link_to "Update profile", edit_user_path(current_user.id) %>
-        <%=link_to "Logout", '/logout'%>
-      </div>
+    
+
+      <nav class="navbar navbar-expand-md navbar-inverse bg-primary">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <%=link_to "InstaGareth", posts_path, :class => "navbar-brand" %>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Posts
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <%=link_to "New post", new_post_path, :class => "dropdown-item" %>
+                <%=link_to "View all posts", posts_path, :class => "dropdown-item" %>
+                <%=link_to "View my posts", user_path(current_user.id), :class => "dropdown-item" %>
+              </div>
+            </li>
+            <li class="nav-item">
+              <%=link_to "Update profile", edit_user_path(current_user.id), :class => "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%=link_to "Logout", '/logout', :class => "nav-link"%>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
     <%end%>
     <%= yield %>
   </body>
