@@ -1,24 +1,44 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## InstaGareth
 
-Things you may want to cover:
+## Summary
+A photo sharing app created to help me learn Ruby on Rails. 
+Originally a weekend challenge from Makers Academy coding bootcamp.
 
-* Ruby version
+## Features
 
-* System dependencies
+* Sign in / Sign up / Sign out
+* Post image with caption
+* View all posts
+* View a page of all a users' own posts
+* Comment on posts
+* Edit posts
+* Delete posts
+* Update user profile details
+* Delete user account
 
-* Configuration
+## Setup
 
-* Database creation
+### Ruby version
 
-* Database initialization
+````
+ruby 2.6.3
+````
 
-* How to run the test suite
+### Database setup
 
-* Services (job queues, cache servers, search engines, etc.)
+````bash
+rails db:create
+rails db:migrate
+````
 
-* Deployment instructions
+### Server on localhost
 
-* ...
+````bash
+rails s
+````
+
+## Tests
+
+Coming soon...
