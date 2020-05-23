@@ -31,6 +31,12 @@ Originally a weekend challenge from Makers Academy coding bootcamp.
 ruby 2.6.3
 ````
 
+### Install gems
+
+````bash
+bundle install
+````
+
 ### Database setup
 
 ````bash
@@ -43,7 +49,3 @@ rails db:migrate
 ````bash
 rails s
 ````
-
-## Tests
-
-Coming soon...

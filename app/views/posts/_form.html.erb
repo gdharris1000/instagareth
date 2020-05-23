@@ -1,7 +1,9 @@
 <%= form_for @post do |f|%>
-    <%=f.label :image%>
-    <%=f.file_field :image%>
-    <%=f.label :caption%>
-    <%=f.text_field :caption%>
-    <%=f.submit%>
+    <h6><%=f.label :image%></h6>
+    <%=f.file_field :image, :class => "form-control text-center"%>
+    <br>
+    <h6><%=f.label :caption%></h6>
+    <%=f.text_field :caption , :class => "form-control text-center"%>
+    <br>
+    <%=f.submit :class => "btn-primary"%>
 <%end%>
