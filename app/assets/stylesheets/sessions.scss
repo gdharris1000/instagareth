@@ -33,6 +33,7 @@ body{
     background-color: $blue-primary !important;
 }
 
-.nav-link:hover{
+.nav-link:hover, a:hover{
     background-color: $blue-secondary !important;
 }
+
