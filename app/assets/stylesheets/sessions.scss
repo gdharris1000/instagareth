@@ -1,3 +1,38 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+$red-primary: #d62839;
+$red-secondary: #ba324f;
+$blue-primary: #175676;
+$blue-secondary: #4ba3c3;
+$blue-tertiary: #cce6f4;
+
+.welcome-box{
+    margin-top: 100px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body{
+    background-color: $red-primary;
+    
+}
+
+.welcome .card{
+    border: $blue-primary 3px solid;
+}
+
+.welcome .btn-primary{
+    background-color: $blue-secondary;
+    padding: 5px;
+}
+
+.navbar {
+    background-color: $blue-primary !important;
+}
+
+.nav-link:hover{
+    background-color: $blue-secondary !important;
+}

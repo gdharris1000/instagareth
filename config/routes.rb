@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   get 'logout', to: 'sessions#logout'
 
   post 'comments/new', to: 'comments#create'
+  
 end

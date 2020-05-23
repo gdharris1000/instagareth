@@ -18,6 +18,11 @@ Originally a weekend challenge from Makers Academy coding bootcamp.
 * Update user profile details
 * Delete user account
 
+## Technology used
+* Ruby on Rails
+* Bootstrap
+* Travis CI
+
 ## Setup
 
 ### Ruby version

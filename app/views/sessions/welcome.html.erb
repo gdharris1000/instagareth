@@ -1,9 +1,22 @@
-<h1>Welcome</h1>
+<div class="welcome">
+    
+    <div class="container">
+        <div class="card text-center welcome-box">
+            <div class="card-body">
+                <h1 class="card-title">InstaGareth</h1>
+                <hr>
+                <% if logged_in? %>
+                    <h2>Welcome <%=current_user.name%></h2>
+                    <%= button_to "Logout", '/logout', method: :get, :class => "btn-primary" %>
+                <%else%>
+                    <%= button_to "Login", '/login', method: :get, :class => "btn-primary" %><br>
+                    <%= button_to "Sign Up", '/users/new', method: :get, :class => "btn-primary" %>
+                <% end %>
+            </div>
+         </div>
+     </div>
+</div>
 
-<% if logged_in? %>
-    <h2>Welcome <%=current_user.name%></h2>
-    <%= button_to "Logout", '/logout', method: :get%>
-<%else%>
-<%= button_to "Login", '/login', method: :get%>
-<%=button_to "Sign Up", '/users/new', method: :get%>
-<% end %>
+
+
+
