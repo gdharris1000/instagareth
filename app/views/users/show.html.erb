@@ -1,16 +1,44 @@
- <%@posts.each do |post|%>
-    <img src="<%=(url_for(post.image))%>">
-    <p><%=link_to "Edit post", edit_post_path(post.id)%></p>
-    <%@comments.each do |comment|%>
-    <%if comment.post_id == post.id%>
-     <p> 
-      <%=comment.comment_text%>
-      <br>
-      by 
-      <%=User.find(comment.user_id).name%> 
-      at
-      <%=comment.created_at%>
-     </p>
+<div class="container">
+  <div class="card-columns">
+    <%@posts.each do |post|%>
+      <div class="card h-100" style="width: 18rem;">
+        <img class="card-img-top" src="<%=(url_for(post.image))%>" alt="<%=post.caption%>">
+        <div class="card-body">
+          <p class="card-text"><%=post.caption%></p>
+            <%if post.user_id == current_user.id%>
+              <p><%=link_to "Edit post", edit_post_path(post.id)%></p>
+            <%end%>
+          <%@comments.each do |comment|%>
+            <%if comment.post_id == post.id%>
+            <p> 
+              <%=comment.comment_text%>
+              <br>
+              by 
+              <%=User.find(comment.user_id).name%> 
+              at
+              <%=comment.created_at%>
+            </p>
+              <%if comment.user_id == current_user.id%>
+                <%= link_to "edit comment", edit_comment_path(comment.id)%>
+                <%= link_to "Delete comment", comment_path(comment), method: :delete, data: { confirm: "Are you sure?" } %>
+              <%end%>
+            <%end%>
+          <%end%>
+          <%=form_for @comment, :url => new_comment_path(@comment) do |f|%>
+            <%=f.text_field :comment_text%>
+            <%= f.hidden_field :user_id, :value => current_user.id%>
+            <%= f.hidden_field :post_id, :value => post.id%>
+            <%=f.submit%>
+          <%end%>
+        </div>
+      </div>
     <%end%>
-  <%end%>
- <%end%>
+  </div>
+</div>
+ 
+ 
+ 
+ 
+ 
+ 
+

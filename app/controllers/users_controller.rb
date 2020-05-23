@@ -19,6 +19,7 @@ class UsersController < ApplicationController
   def show
     @posts = Post.where(:user_id => @user.id)
     @comments = Comment.all
+    @comment = Comment.new
   end
 
   def edit
