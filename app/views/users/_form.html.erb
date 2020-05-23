@@ -1,14 +1,14 @@
 <%= form_for @user do |f|%>
 
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-
-    <%= f.submit %>
+    <h6><%= f.label :name %></h6>
+    <%= f.text_field :name, :class => "form-control text-center"%>
+    <br>
+    <h6><%= f.label :email %></h6>
+    <%= f.text_field :email, :class => "form-control text-center" %>
+    <br>
+    <h6><%= f.label :password %></h6>
+    <%= f.password_field :password, :class => "form-control text-center" %>
+    <br>
+    <%= f.submit :class => "btn-primary"%>
 
 <%end%>
