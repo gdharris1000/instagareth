@@ -1,2 +1,17 @@
-<%= render 'form'%>
-<%= link_to "Delete post", post_path(@post), method: :delete, data: {confirm:"Are you sure?"}%>
+<div class="welcome">
+    
+    <div class="container">
+        <div class="card text-center welcome-box">
+            <div class="card-body">
+                <h1 class="card-title">Edit Post</h1>
+                <hr>
+                <%= render 'form'%>
+                <%= link_to "Delete post", post_path(@post), method: :delete, data: {confirm:"Are you sure?"}%>
+            </div>
+         </div>
+     </div>
+</div>
+
+
+
+
