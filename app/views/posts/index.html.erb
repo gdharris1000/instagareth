@@ -17,10 +17,12 @@
         <p> 
           <%=comment.comment_text%>
           <br>
+          <small>
           by 
           <%=User.find(comment.user_id).name%> 
           at
           <%=comment.created_at%>
+          </small>
         </p>
           <%if comment.user_id == current_user.id%>
             <%= link_to "edit comment", edit_comment_path(comment.id)%>

@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+
+
 $red-primary: #d62839;
 $red-secondary: #ba324f;
 $blue-primary: #175676;
@@ -18,6 +22,11 @@ $blue-tertiary: #cce6f4;
 body{
     background-color: $red-primary;
     
+}
+
+.instagareth{
+    font-family: 'Permanent Marker', cursive;
+    font-weight: bold;
 }
 
 .welcome .card{
