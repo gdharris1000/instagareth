@@ -2,6 +2,8 @@
 
 ## InstaGareth
 
+![Main posts page of IntaGareth](/readme_images/allposts.jpg)
+
 ## Summary
 A photo sharing app created to help me learn Ruby on Rails. 
 Originally a weekend challenge from Makers Academy coding bootcamp.
